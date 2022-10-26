@@ -1,6 +1,32 @@
 var 12
 №1
+def get_sum_of_dividers(number):
+    result = 0
+    for i in range(1, number // 2 + 1):
+        if number % i == 0:
+            result += i
+    return result
 
+
+def get_data_of_dividers(n):
+    data = dict()
+    for number in range(n):
+        data[number] = get_sum_of_dividers(number)
+
+    return data
+
+
+def friendly(data:dict):
+    for first in data:
+        last = data[first]
+        if data.get(first) == last and data.get(last) == first and first != last:
+            print('%d and %d' % (first, last))
+            data[first] = 0
+
+
+n=int(input())
+data = get_data_of_dividers(10000)
+friendly(data)
 
 №2
 import math
