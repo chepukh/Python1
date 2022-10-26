@@ -1,0 +1,23 @@
+var 12
+№1
+
+
+№2
+import math
+def mediana(a,b,c):
+    mediana = math.sqrt(2*(b*b+c*c)-a*a)/2
+    return mediana
+a=int(input("Введите первую сторону "))
+b=int(input("Введите вторую сторону "))
+c=int(input("Введите третью сторону "))
+if a+b<c or b+c<a or c+a<b:
+    print("Такого треугольника не существует")
+
+xa=mediana(a,b,c)
+xb=mediana(b,a,c)
+xc=mediana(c,a,b)
+print("Медианы для исходного треуглоника ","\nПервая медиана = ",xa,"\nВторая медиана = ", xb, "\nТретья медиана = ", xc)
+yxa=mediana(xa,xb,xc)
+yxb=mediana(xb,xa,xc)
+yxc=mediana(xc,xa,xb)
+print("Медианы от медиан","\nПервая медиана = ",yxa,"\nВторая медиана = ", yxb, "\nТретья медиана = ", yxc)
