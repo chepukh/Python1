@@ -1,0 +1,26 @@
+var 12
+№1
+arr1 = [[1,2,3,4], [2,3,9,5], [3,4,5,6], [4,5,6,7]]
+for i in arr1 :
+    print(i)
+
+n = 4
+arr2 = list(map(list,zip(*arr1)))
+for x in range(n) :
+    for y in range(n) :
+        if arr1[x] == arr2[y] :
+            print(x+1, 'строка и ', y+1, 'столбец равны')
+            
+№2 
+def zamena(x):
+    z=x[0] 
+    x[0]=x[len(x)-1] 
+    x[len(x)-1]=z 
+a=[]
+m=int(input('введите длину массива: '))
+for i in range(m):
+    print('введите', i, 'элемент массива: ')
+    a.append(int(input()))
+print("Исходный = ", a)
+zamena(a)
+print("Итог = ", a)
