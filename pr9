@@ -1,0 +1,33 @@
+f=open('C:/Users/юрий/Desktop/КонстантинЩегловЮрьевичУБ-21.txt','r')
+s=open('C:/Users/юрий/Desktop/уб.txt','w')
+A=[]
+for line in f:
+    a=list(map(int,line.split()))
+    A.append(a)
+s.write("Номер 1\n")
+B=[]
+for i in range(4):
+    b=[]
+    for j in range(4):
+        b.append(A[j][i])
+    B.append(b)
+for i in range(4):
+    if A[i]==B[i]:
+        s.write(str(i+1))
+        s.write(" совпадает(ют) \n")
+
+s.write("Номер 2\n")
+k=open('C:/Users/юрий/Desktop/к2.txt','r')
+m=[]
+for line in k:
+    l=list(map(int,line.split()))
+    m.append(l)
+
+for i in range (len(m)-1):
+    for j in range (len(m[0])):
+        m[i][j]-=m[-1][j]
+for i in m :
+    s.write(str(i))
+    s.write("\n")
+f.close()
+s.close()
