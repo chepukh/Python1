@@ -1,0 +1,26 @@
+import requests
+from pprint import pprint
+from tkinter import *
+from tkinter.filedialog import askopenfile
+
+def inf():
+    global entr
+    url = f"https://api.github.com/users/{entr.get()}"
+    user_data = requests.get(url).json()
+    pprint(user_data)
+
+    f = askopenfile("w")
+    f.write(str(user_data))
+    
+window = Tk()
+window.title("Щеглов Константин Юрьевич")
+window.geometry("1000x750")
+entr=IntVar()
+entr = Entry(window, width=30)
+entr.grid(column=0,row=0)
+btn = Button(window, text='Информация', command=inf)
+btn.grid(column=1,row=0)
+lbl = Label(window, text='result')
+lbl.grid(column=0,row=1)
+
+window.mainloop()
